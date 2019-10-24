@@ -89,23 +89,6 @@ Instructions on use can be found in the README repository.
     </div>
   </div>
 
-  <script>
-    //  exporting data to .csv
-    function saveGaze() {
-        var csv = '';
-        x.forEach(function (row) {
-            csv += row.join(',');
-            csv += "\n";
-        });
-
-        var hiddenElement = document.createElement('a');
-        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-        hiddenElement.target = '_blank';
-        hiddenElement.download = 'gazeData.csv';
-        hiddenElement.click();
-    }
-  </script>
-
   <!-- Latest compiled JavaScript -->
   <script src="./js/resize_canvas.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"

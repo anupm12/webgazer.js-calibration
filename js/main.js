@@ -1,6 +1,8 @@
+var x = [];
+
 window.onload = function () {
 
-    var x = [];
+   
 
     //start the webgazer tracker
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
@@ -40,7 +42,24 @@ window.onload = function () {
         }
     }
     setTimeout(checkIfReady, 100);
+
+    
 };
+
+//  exporting data to .csv
+function saveGaze() {
+    var csv = '';
+    x.forEach(function (row) {
+        csv += row.join(',');
+        csv += "\n";
+    });
+
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'gazeData.csv';
+    hiddenElement.click();
+}
 
 window.onbeforeunload = function () {
     //webgazer.end(); //Uncomment if you want to save the data even if you reload the page.
