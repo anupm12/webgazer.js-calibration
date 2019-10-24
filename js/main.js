@@ -13,7 +13,7 @@ window.onload = function() {
             var predy = data["y"];
             x.push([predx, predy]);
 
-            // console.log(data["x"]+","+data["y"]);
+            console.log(data["x"]+","+data["y"]);
             }
             
             //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
