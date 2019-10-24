@@ -5,8 +5,10 @@ window.onload = function() {
         .setTracker('clmtrackr')
         .setGazeListener(function(data, clock) {
             // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-            // console.log(data.x);
-            // console.log(data.y);
+            var predx = data.x;
+            var predy = data.y;
+            console.log(predx);
+            console.log(predy);
             //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
         })
         .begin()
