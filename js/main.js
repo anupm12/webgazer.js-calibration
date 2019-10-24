@@ -1,8 +1,6 @@
-var x = [];
+var expData = [];
 
 window.onload = function () {
-
-   
 
     //start the webgazer tracker
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
@@ -13,7 +11,7 @@ window.onload = function () {
             if (data != null) {
                 var predx = data["x"];
                 var predy = data["y"];
-                x.push([predx, predy]);
+                expData.push([predx, predy]);
 
                 console.log(data["x"] + "," + data["y"]);
             }
@@ -49,7 +47,7 @@ window.onload = function () {
 //  exporting data to .csv
 function saveGaze() {
     var csv = '';
-    x.forEach(function (row) {
+    expData.forEach(function (row) {
         csv += row.join(',');
         csv += "\n";
     });
