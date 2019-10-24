@@ -11,7 +11,7 @@ window.onload = function() {
             if(data!=null){
             var predx = data["x"];
             var predy = data["y"];
-            x.push([xprediction, yprediction]);
+            x.push([predx, predy]);
 
             // console.log(data["x"]+","+data["y"]);
             }
