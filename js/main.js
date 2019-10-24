@@ -1,15 +1,19 @@
 window.onload = function() {
 
+    var x = [];
+
     //start the webgazer tracker
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
         .setTracker('clmtrackr')
         .setGazeListener(function(data, clock) {
             // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-            // var predx = data.x;
-            // var predy = data.y;
+            
             if(data!=null){
-                console.log(data["x"]+","+data["y"]);
-                // console.log(data["y"]);
+            var predx = data["x"];
+            var predy = data["y"];
+            x.push([xprediction, yprediction]);
+
+            // console.log(data["x"]+","+data["y"]);
             }
             
             //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
@@ -17,6 +21,20 @@ window.onload = function() {
         .begin()
         .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
 
+    // exporting data to .csv
+    function saveGaze() {
+        var csv = '';
+        x.forEach(function (row) {
+            csv += row.join(',');
+            csv += "\n";
+        });
+
+        var hiddenElement = document.createElement('a');
+        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+        hiddenElement.target = '_blank';
+        hiddenElement.download = 'gazeData.csv';
+        hiddenElement.click();
+    }
 
     //Set up the webgazer video feedback.
     var setup = function() {
