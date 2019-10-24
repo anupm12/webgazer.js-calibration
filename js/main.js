@@ -4,11 +4,14 @@ window.onload = function() {
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
         .setTracker('clmtrackr')
         .setGazeListener(function(data, clock) {
-            console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-            // var predx = data.x;
-            // var predy = data.y;
-            // console.log(predx);
-            // console.log(predy);
+            // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
+            var predx = data.x;
+            var predy = data.y;
+            if(data != null){
+                console.log(predx);
+                console.log(predy);
+            }
+            
             //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
         })
         .begin()
