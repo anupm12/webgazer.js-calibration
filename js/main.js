@@ -8,8 +8,8 @@ window.onload = function() {
             // var predx = data.x;
             // var predy = data.y;
             if(data!=null){
-                console.log(data["x"]);
-                // console.log(data.y);
+                console.log(data["x"]+","+data["y"]);
+                // console.log(data["y"]);
             }
             
             //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
