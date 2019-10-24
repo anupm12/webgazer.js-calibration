@@ -8,7 +8,7 @@ window.onload = function() {
             // var predx = data.x;
             // var predy = data.y;
             if(data!=null){
-                console.log(data[x]);
+                console.log(data[all]);
                 // console.log(data.y);
             }
             
