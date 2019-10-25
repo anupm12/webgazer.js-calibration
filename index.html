@@ -33,10 +33,10 @@ Instructions on use can be found in the README repository.
   <script src="./js/precision_calculation.js"></script>
   <script src="./js/precision_store_points.js"></script>
 
-  <nav id="webgazerNavbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- <nav id="webgazerNavbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <!-- The hamburger menu button -->
+        The hamburger menu button
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -45,7 +45,7 @@ Instructions on use can be found in the README repository.
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <!-- Accuracy -->
+          Accuracy
           <li id="Accuracy"><a>Not yet Calibrated</a></li>
           <li onclick="Restart()"><a href="#">Recalibrate</a></li>
           <li onclick="saveGaze()">
@@ -55,14 +55,39 @@ Instructions on use can be found in the README repository.
             <input type='file' onchange="readURL(this);" />
           </li>
         </ul>
-
       </div>
     </div>
-  </nav>`
+  </nav>` -->
 
-  <!-- <div onclick="saveGaze()" class="ml-auto" style="margin-top:12rem;">
-    <button class="btn btn-light">Save</button>
-  </div> -->
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="webgazerNavbar">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" id="Accuracy">
+          <a>Not yet Calibrated</a>
+        </li>
+
+        <li class="nav-item" onclick="Restart()">
+          <a class="nav-link" href="#">Recalibrate</a>
+        </li>
+
+        <li class="nav-item" onclick="saveGaze()">
+          <a class="nav-link" href="#">Save</a>
+        </li>
+
+        <li class="nav-item">
+          <input type='file' onchange="readURL(this);" />
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Calibration points -->
   <div class="calibrationDiv">
