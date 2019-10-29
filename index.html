@@ -30,6 +30,15 @@ Instructions on use can be found in the README repository.
 </head>
 
 <body LANG="en-US" LINK="#0000ff" DIR="LTR" id="testImage">
+<div class="d-flex justify-content-end">
+    <p id="Accuracy">
+      <a href="#">Not Yet Calibrate</a>
+    </p>
+    <a href="#" class="btn-sm" onclick="Restart()">Recalibrate</a>
+    <a href="#" class="btn-sm" onclick="saveGaze()">Save</a>
+    <input type="file" id="backImage" onchange="readURL(this);">
+  </div>
+  
   <canvas id="plotting_canvas" width="500" height="500" style="cursor:crosshair;"></canvas>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
@@ -68,14 +77,7 @@ Instructions on use can be found in the README repository.
     </div>
   </nav>` -->
 
-  <div class="d-flex justify-content-end">
-    <p id="Accuracy">
-      <a href="#">Not Yet Calibrate</a>
-    </p>
-    <a href="#" class="btn-sm" onclick="Restart()">Recalibrate</a>
-    <a href="#" class="btn-sm" onclick="saveGaze()">Save</a>
-    <input type="file" id="backImage" onchange="readURL(this);">
-  </div>
+  
 
 
   <!-- <nav class="navbar navbar-light bg-light" id="webgazerNavbar" style="width:5rem;">
