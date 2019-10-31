@@ -1,8 +1,8 @@
-"use strict";
+// "use strict";
 
 var PointCalibrate = 0;
 var CalibrationPoints={};
-let isCheck=false;
+var isCheck=false;
 
 /**
  * Clear the canvas and the calibration button.
@@ -153,11 +153,11 @@ function sleep (time) {
 // export default{
 //   value: isCheck,
 // } 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  value: isCheck
-};
-exports.default = _default;
+// Object.defineProperty(exports, "__esModule", {
+//   value: true
+// });
+// exports.default = void 0;
+// var _default = {
+//   value: isCheck
+// };
+// exports.default = _default;
