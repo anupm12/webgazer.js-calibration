@@ -18,9 +18,27 @@ Instructions on use can be found in the README repository.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
   <script async type="text/javascript" src="./webgazer.js"></script>
+  <style>
+    #testImage{
+      background-image:url('');
+      background-size:cover;
+      background-position: center;
+      height: 100vh; 
+      width: 100%;
+    }
+  </style>
 </head>
 
-<body LANG="en-US" LINK="#0000ff" DIR="LTR">
+<body LANG="en-US" LINK="#0000ff" DIR="LTR" id="testImage">
+<div class="d-flex justify-content-end">
+    <p id="Accuracy">
+      <a href="#">Not Yet Calibrate</a>
+    </p>
+    <a href="#" class="btn-sm" onclick="Restart()">Recalibrate</a>
+    <a href="#" class="btn-sm" onclick="saveGaze()">Save</a>
+    <input type="file" id="backImage" onchange="readURL(this);">
+  </div>
+  
   <canvas id="plotting_canvas" width="500" height="500" style="cursor:crosshair;"></canvas>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
@@ -59,10 +77,10 @@ Instructions on use can be found in the README repository.
     </div>
   </nav>` -->
 
+  
 
 
-
-  <nav class="navbar navbar-light bg-light" id="webgazerNavbar" style="width:5rem;">
+  <!-- <nav class="navbar navbar-light bg-light" id="webgazerNavbar" style="width:5rem;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -86,7 +104,7 @@ Instructions on use can be found in the README repository.
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
 
   <!-- Calibration points -->
   <div class="calibrationDiv">
@@ -121,18 +139,30 @@ Instructions on use can be found in the README repository.
 
 
   <script>  
-    function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+    // function readURL(input) {
+    //         if (input.files && input.files[0]) {
+    //             var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                };
+    //             reader.onload = function (e) {
+    //                 $('#blah')
+    //                     .attr('src', e.target.result);
+    //             };
 
-                reader.readAsDataURL(input.files[0]);
-            }
+    //             reader.readAsDataURL(input.files[0]);
+    //         }
+    //     }
+    document.getElementById('backImage').addEventListener('change', readURL, true);
+      function readURL(){
+        var file = document.getElementById("backImage").files[0];
+        var reader = new FileReader();
+        reader.onloadend = function(){
+            document.getElementById('testImage').style.backgroundImage = "url(" + reader.result + ")";        
         }
+        if(file){
+            reader.readAsDataURL(file);
+          }else{
+          }
+      }
   </script>
   <!-- Latest compiled JavaScript -->
   <script src="./js/resize_canvas.js"></script>
