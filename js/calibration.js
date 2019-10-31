@@ -1,3 +1,5 @@
+"use strict";
+
 var PointCalibrate = 0;
 var CalibrationPoints={};
 let isCheck=false;

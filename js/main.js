@@ -1,3 +1,4 @@
+"use strict";
 // import isCalibrated from './calibration.js';
 var _calibration = _interopRequireDefault(require("./calibration.js"));
 
