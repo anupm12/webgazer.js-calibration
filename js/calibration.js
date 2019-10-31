@@ -148,6 +148,14 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-export default{
-  value: isCheck,
-} 
+// export default{
+//   value: isCheck,
+// } 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  value: isCheck
+};
+exports.default = _default;
