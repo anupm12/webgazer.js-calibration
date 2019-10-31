@@ -1,4 +1,4 @@
-var isCalibrated = require('./calibration.js');
+import isCalibrated from './calibration.js';
 var expData = [];
 
 window.onload = function () {
