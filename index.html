@@ -51,34 +51,6 @@ Instructions on use can be found in the README repository.
   <script src="./js/precision_calculation.js"></script>
   <script src="./js/precision_store_points.js"></script>
 
-  <!-- <nav id="webgazerNavbar" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        The hamburger menu button
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          Accuracy
-          <li id="Accuracy"><a>Not yet Calibrated</a></li>
-          <li onclick="Restart()"><a href="#">Recalibrate</a></li>
-          <li onclick="saveGaze()">
-            <button class="btn btn-light">Save</button>
-          </li>
-          <li>
-            <input type='file' onchange="readURL(this);" />
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>` -->
-
-  
-
 
   <!-- <nav class="navbar navbar-light bg-light" id="webgazerNavbar" style="width:5rem;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -139,18 +111,6 @@ Instructions on use can be found in the README repository.
 
 
   <script>  
-    // function readURL(input) {
-    //         if (input.files && input.files[0]) {
-    //             var reader = new FileReader();
-
-    //             reader.onload = function (e) {
-    //                 $('#blah')
-    //                     .attr('src', e.target.result);
-    //             };
-
-    //             reader.readAsDataURL(input.files[0]);
-    //         }
-    //     }
     document.getElementById('backImage').addEventListener('change', readURL, true);
       function readURL(){
         var file = document.getElementById("backImage").files[0];

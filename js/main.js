@@ -8,7 +8,7 @@ window.onload = function () {
         .setGazeListener(function (data, clock) {
             // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
 
-            if (data != null) {
+            if (data != null && data["x"]>0 && data["y"]>0) {
                 var predx = data["x"];
                 var predy = data["y"];
                 expData.push([predx, predy]);
