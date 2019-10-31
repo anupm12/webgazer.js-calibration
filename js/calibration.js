@@ -2,7 +2,7 @@
 
 var PointCalibrate = 0;
 var CalibrationPoints={};
-var isCheck=false;
+var isCalibrated=false;
 
 /**
  * Clear the canvas and the calibration button.
@@ -109,7 +109,7 @@ $(document).ready(function(){
                           if (isConfirm){
                             //clear the calibration & hide the last middle button
                             ClearCanvas();
-                            isCheck=true;
+                            isCalibrated=true;
                           } else {
                             //use restart function to restart the calibration
                             ClearCalibration();
@@ -149,15 +149,3 @@ function ClearCalibration(){
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
-
-// export default{
-//   value: isCheck,
-// } 
-// Object.defineProperty(exports, "__esModule", {
-//   value: true
-// });
-// exports.default = void 0;
-// var _default = {
-//   value: isCheck
-// };
-// exports.default = _default;

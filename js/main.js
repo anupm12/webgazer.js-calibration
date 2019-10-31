@@ -1,7 +1,3 @@
-// "use strict";
-// import isCalibrated from './calibration.js';
-// var _calibration = _interopRequireDefault(require("./calibration.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var expData = [];
 
@@ -13,7 +9,7 @@ window.onload = function () {
         .setGazeListener(function (data, clock) {
             // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
 
-            if (data != null && data["x"]>0 && data["y"]>0 && isCheck) {
+            if (data != null && data["x"]>0 && data["y"]>0 && isCalibrated) {
                 var predx = data["x"];
                 var predy = data["y"];
                 expData.push([predx, predy]);
