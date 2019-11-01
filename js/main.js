@@ -14,7 +14,7 @@ window.onload = function () {
                 var predy = data["y"];
                 expData.push([predx, predy]);
 
-                console.log(data["x"] + "," + data["y"] + clock);
+                console.log(data["x"] + "," + data["y"] + "-" + clock);
             }
 
             //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
