@@ -14,10 +14,11 @@ window.onload = function () {
                 var predy = data["y"];
                 expData.push([predx, predy]);
 
-                console.log(data["x"] + "," + data["y"]);
+                // console.log(data["x"] + "," + data["y"]);
             }
 
-            //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
+              console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
+              console.log(elapsedTime);
         })
         .begin()
         .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
