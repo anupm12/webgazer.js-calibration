@@ -9,12 +9,12 @@ window.onload = function () {
         .setGazeListener(function (data, clock) {
             // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
 
-            if (data != null && data["x"]>0 && data["y"]>0 && data["x"]<= screen.width && data["y"]<=screen.height) {
+            if (data != null && data["x"]>0 && data["y"]>0 && isCalibrated && data["x"]<= screen.width && data["y"]<=screen.height) {
                 var predx = data["x"];
                 var predy = data["y"];
                 expData.push([predx, predy]);
 
-                console.log(data["x"] + "," + data["y"] + "-" + clock);
+                console.log(data["x"] + ", " + data["y"] + ", " + clock);
             }
 
             //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
