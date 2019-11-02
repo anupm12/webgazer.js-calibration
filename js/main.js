@@ -1,5 +1,6 @@
 
-var expData = [];
+var gazeData = [];
+var onlyTime = [];
 
 window.onload = function () {
 
@@ -13,7 +14,12 @@ window.onload = function () {
                 var predx = data["x"];
                 var predy = data["y"];
                 var elapsedTime = clock;
-                expData.push([predx, predy, elapsedTime]);
+
+                // push to gazeData array
+                gazeData.push([elapsedTime, predx, predy]);
+
+                // push to onlyTime array
+                onlyTime.push([elapsedTime]);
 
                 console.log(data["x"] + ", " + data["y"] + ", " + clock);
             }
@@ -48,7 +54,7 @@ window.onload = function () {
 };
 
 //  exporting data to .csv
-function saveGaze() {
+function saveGaze(expData) {
     var csv = '';
     expData.forEach(function (row) {
         csv += row.join(',');
