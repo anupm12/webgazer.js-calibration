@@ -12,7 +12,8 @@ window.onload = function () {
             if (data != null && data["x"]>0 && data["y"]>0 && isCalibrated && data["x"]<= screen.width && data["y"]<=screen.height) {
                 var predx = data["x"];
                 var predy = data["y"];
-                expData.push([predx, predy]);
+                var elapsedTime = clock;
+                expData.push([predx, predy, elapsedTime]);
 
                 console.log(data["x"] + ", " + data["y"] + ", " + clock);
             }
